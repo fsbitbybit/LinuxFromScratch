@@ -11,7 +11,7 @@ Afterwards, you will be prompted to create an user and a password for that user.
 
 ### Verifying the instalation
 
-We need to verify if it is all set before continuing this big adventure **you** decided that **you** wanted to go through
+We need to verify if it is all set before continuing this big adventure **you** decided that **you** wanted to go through.
 The following command should give the list of wsl systems installed on you machine an which version of wsl it is set to run on:
 ```PowerShell
 wsl --list --verbose
@@ -59,7 +59,7 @@ sudo apt update && sudo apt install -y \
     xz-utils
 ```
 
-Now we got the tools to start building our own distro lets install the well oiled motor that makes the connection between software and hardwar, the beatiful linux kernel:
+Now we got the tools to start building our own distro lets install the well oiled motor that makes the connection between software and hardware, the beatiful linux kernel:
 ```bash
 sudo wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.1.60.tar.xz
 ```
@@ -81,11 +81,11 @@ After the kernel decompresses there will be a linux-6.1.60 directory on you curr
 ```bash
 cd linux-6.1.60
 ```
-So now we need to make a configuratio file for our linux image buider, but news flash linux has 30 million components at least and 15k variables in a config file to be configured so, do you want to do it manually or should we ask a little help, with the help of kconfig and make we are to make this exhausting hand coding process automatic with this command:
+So now we need to make a configuration file for our linux image builder, but news flash linux has 30 million components at least and 15k variables in a config file to be configured so, do you want to do it manually or should we ask a little help, with the help of kconfig and make we are to make this exhausting hand coding process automatic with this command:
 ```bash
 sudo make defconfig
 ```
-Poof the beautiful config file is created, if you hit `ls -lah` there should be a `.config` file in there. Now we need to check for the following variables if they are marked with a yes and not commented:
+Poof, the beautiful config file is created, if you hit `ls -lah` there should be a `.config` file in there. Now we need to check for the following variables if they are marked with a yes and not commented:
 
 ```bash
 sudo nvim(your text editor of choice) .config
@@ -107,7 +107,7 @@ Now we can run a command to check on our computer the modules it needs to run an
 ```bash
 sudo make localmodconfig 
 ```
-If you are prompted if you need x or y module, hit yes because you will problably will
+If you are prompted if you need x or y module, hit yes because you will problably will need it.
 
 Now that we are all set we can create a .img file from our initial configuration:
 ```bash
